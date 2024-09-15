@@ -71,6 +71,13 @@ function checkLowStock(inventory) {
         if (product.quantity <= product.lowStockLevel) {
             console.log(product.name);}});}
 
+// Task 5: Function to calculate total inventory value
+function calculateInventoryValue(inventory) {
+    return inventory.reduce((totalValue, product) => {
+        return totalValue + (product.price * product.quantity);
+    }, 0);}
+
+
 
 
 
