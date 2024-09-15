@@ -77,6 +77,48 @@ function calculateInventoryValue(inventory) {
         return totalValue + (product.price * product.quantity);
     }, 0);}
 
+// Task 6: Function to process a sale
+function processSale(productName, unitsSold) {
+    // Find the product in the inventory by its name
+    const product = inventory.find(p => p.name === productName);
+
+    if (product) {
+        // Call updateStock to reduce the quantity
+        updateStock(product, unitsSold);
+        
+        // Log a product being found
+        console.log("Product found and stock updated."); 
+    } else {
+        // Log an error message if the product is not found
+        console.log(`Error: Product "${productName}" is not in the inventory.`);}}
+
+// Testing Sample Data set
+const inventory = [
+    { name: 'Laptop', price: 1200, quantity: 10, lowStockLevel: 3 },
+    { name: 'Smartphone', price: 800, quantity: 5, lowStockLevel: 2 },
+    { name: 'Tablet', price: 400, quantity: 7, lowStockLevel: 1 },
+    { name: 'Headphones', price: 100, quantity: 15, lowStockLevel: 5 },
+    { name: 'Smartwatch', price: 250, quantity: 3, lowStockLevel: 1 }
+];
+console.log("Product Details:"); // show product details in console 
+inventory.forEach(displayProductDetails);
+
+console.log("Low Stock Products:"); // show low stock in console
+checkLowStock(inventory);
+
+const totalValue = calculateInventoryValue(inventory);
+console.log(`Total Inventory Value: $${totalValue.toFixed(2)}`); // show total inventory value in console
+
+
+console.log("Processing Sale:"); // showing sales process in console
+processSale("Smartwatch", 2); // sale of 2 watches shown in console
+
+console.log("Updated Inventory Details:");
+inventory.forEach(displayProductDetails); // display updated product details
+
+console.log("Checking Low Stock After Sale:");
+checkLowStock(inventory); // check which products are now low in stock
+
 
 
 
