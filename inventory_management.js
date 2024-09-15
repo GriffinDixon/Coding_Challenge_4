@@ -45,7 +45,7 @@ const displayProductDetails = (product) => {
     console.log(`Stock Status: ${stockStatus}`);};
 
 
-    // Task 3:Function to update product stock after sales
+// Task 3:Function to update product stock after sales
 function updateStock(product, unitsSold) {
     // Update the quantity
     product.quantity -= unitsSold;
@@ -64,6 +64,15 @@ function updateStock(product, unitsSold) {
     console.log(`Updated Product Name: ${product.name}`);
     console.log(`New Quantity in Stock: ${product.quantity}`);
     console.log(`Stock Status: ${stockStatus}`);}
+
+// Task 4 Efficient function to check low stock products
+function checkLowStock(inventory) {
+    inventory.forEach(product => {
+        if (product.quantity <= product.lowStockLevel) {
+            console.log(product.name);}});}
+
+
+
 
 
 
