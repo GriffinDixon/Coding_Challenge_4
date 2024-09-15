@@ -30,3 +30,4 @@ const inventory = [
         quantity: 200,
         lowStockLevel: 50
     }];
+    console.log(inventory);
