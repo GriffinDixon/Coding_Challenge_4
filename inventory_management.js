@@ -1,4 +1,4 @@
-// Creating an Array of Product Objects
+// Task 1: Creating an Array of Product Objects
 const inventory = [
     {
         name: "Water Bottle",
@@ -30,4 +30,18 @@ const inventory = [
         quantity: 200,
         lowStockLevel: 50
     }];
-    console.log(inventory);
+    console.log(inventory); // checking console log to ensure proper code
+
+// Task 2: Create a Function to Display Product Details
+const displayProductDetails = (product) => {
+    // Determine stock status
+    const stockStatus = product.quantity <= product.lowStockLevel ? "Low Stock" : "In Stock";
+    
+    // Log product details
+    console.log(`Product Name: ${product.name}`);
+    console.log(`Price: $${product.price.toFixed(2)}`);
+    console.log(`Quantity in Stock: ${product.quantity}`);
+    console.log(`Stock Status: ${stockStatus}`);};
+
+
+
